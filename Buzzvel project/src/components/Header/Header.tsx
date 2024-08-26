@@ -12,18 +12,19 @@ const Header: React.FC<HeaderProps> = () => {
   const navRef = useRef<HTMLUListElement | null>(null);
 
   useGSAP(() => {
-
     gsap.to(navRef.current, {
       scrollTrigger: {
         trigger: ".hero-section__contact",
-        start: "center-=50",
+        start: "top center",
+        end: "center center",
         scrub: true,
       },
-      flexDirection: "column",
       x: "50%",
       position: "fixed",
+      top: "10",
+      left: "75",
       gap: "1em",
-      backgroundColor: "rgb(255, 255, 255, 0.4)",
+      backgroundColor: "rgb(0, 0, 0, 0.1)",
       padding: "5px",
       borderRadius: "1em"
     });

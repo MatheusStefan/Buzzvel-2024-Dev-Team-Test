@@ -14,13 +14,13 @@ const LandingPage: React.FC<LandingPageProps> = () => {
   const taglineRef = useRef<HTMLSpanElement | null>(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({ repeat: 0 });
+    const tl = gsap.timeline({});
     tl.to(heroRef.current, {
       backgroundColor: "rgb(255, 255, 255, 0.8)",
       scrollTrigger: {
-        trigger: ".test",
-        start: "top top",
-        end: "center bottom",
+        trigger: ".hero-section__tagline",
+        start: "top center",
+        end: "center-=16% center",
         scrub: true,
       },
     });
@@ -33,7 +33,7 @@ const LandingPage: React.FC<LandingPageProps> = () => {
         value: "Changing the WORLD through CODE",
         type: "diff",
       },
-      repeat: 5,
+      repeat: 2,
     });
   }, []);
 
@@ -62,15 +62,6 @@ const LandingPage: React.FC<LandingPageProps> = () => {
             </a>
           </p>
         </div>
-      </div>
-      <div className={styles.test} id="about-me">
-        about-me
-      </div>
-      <div className={styles.test} id="projects">
-        projects
-      </div>
-      <div className={styles.test} id="timeline">
-        timeline
       </div>
     </section>
   );
