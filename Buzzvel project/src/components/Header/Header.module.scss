@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+
+  &__logo {
+    &-content {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  .navigation__list {
+    position: relative;
+    display: flex;
+    gap: 2em;
+  }
+
+  &__item {
+    list-style: none;
+  }
+}

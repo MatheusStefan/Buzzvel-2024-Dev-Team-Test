@@ -1,0 +1,87 @@
+@import 'src/styles/variables.scss';
+
+.landingPage {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+
+  &-title {
+    text-align: center;
+  }
+}
+
+.description {
+  transition: color, background-color 1s;
+  width: fit-content;
+  padding: 2px;
+  margin-bottom: 60px;
+
+  &:hover {
+    background-color: $accent;
+    color: $primary-color;
+  }
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 90%;
+  border-radius: 20px;
+  height: fit-content;
+
+  &__tagline {
+    position: relative;
+    font-size: 3em;
+    font-weight: lighter;
+    text-align: center;
+    height: 230px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__contact {
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #000;
+
+    &-info {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  .user {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    clip-path: circle(45%);
+  }
+
+}
+
+.test {
+  margin-top: 50px;
+  background-color: red;
+  height: 300px;
+  width: 300px;
+}
