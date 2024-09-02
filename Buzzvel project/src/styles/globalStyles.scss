@@ -10,10 +10,14 @@
   font-family: "Raleway", sans-serif;
 }
 
+.App {
+  z-index: -99;
+}
+
 body {
   background-color: $secondary-color;
   color: $primary-color;
-
+  
   animation: fadeIn 3s ease;
 }
 

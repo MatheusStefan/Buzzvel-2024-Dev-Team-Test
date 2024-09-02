@@ -12,24 +12,41 @@ const Header: React.FC<HeaderProps> = () => {
   const navRef = useRef<HTMLUListElement | null>(null);
 
   useGSAP(() => {
-    gsap.to(navRef.current, {
-      scrollTrigger: {
-        trigger: ".hero-section__contact",
-        start: "top center",
-        end: "center center",
-        scrub: true,
-      },
-      x: "50%",
-      position: "fixed",
-      top: "10",
-      left: "75",
-      gap: "1em",
-      backgroundColor: "rgb(0, 0, 0, 0.1)",
-      padding: "5px",
-      borderRadius: "1em"
+    const mm = gsap.matchMedia();
+
+    mm.add("(max-width: 768px)", () => {
+      gsap.to(navRef.current, {
+        scrollTrigger: {
+          trigger: ".hero-section__contact",
+          start: "top center",
+          end: "center center",
+          scrub: true,
+        },
+        gap: "1em",
+        backgroundColor: "rgb(0, 0, 0, 0.1)",
+        padding: "5px",
+        borderRadius: "1em",
+      });
     });
-  })
-    
+
+    mm.add("(min-width: 769px)", () => {
+      gsap.to(navRef.current, {
+        scrollTrigger: {
+          trigger: ".hero-section__contact",
+          start: "top center",
+          end: "center center",
+          scrub: true,
+        },
+        position: "fixed",
+        top: "10",
+        gap: "1em",
+        backgroundColor: "rgb(0, 0, 0, 0.2)",
+        padding: "10px",
+        borderRadius: "2em",
+      });
+    });
+  });
+
   return (
     <header className={styles.header}>
       <div className={styles["header__logo"]}>

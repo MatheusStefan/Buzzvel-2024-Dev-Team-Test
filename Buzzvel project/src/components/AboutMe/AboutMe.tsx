@@ -8,31 +8,79 @@ gsap.registerPlugin(Draggable, TextPlugin, ScrollTrigger);
 
 type AboutMeProps = unknown;
 
+const cards = [
+  { year: "2020", content: "Graduation in Bioanalysis" },
+  {
+    year: "2021",
+    content: "Started to learn Java and Spring Boot by online courses.",
+    tags: ["Java", "Spring Boot", "Ionic", "Microservices", "Hibernate"],
+  },
+  {
+    year: "2022",
+    content:
+      "Participated in a VTEX program named Hiring Coders, plus DIO Bootcamps",
+    tags: [
+      "Javascript",
+      "Typescript",
+      "React",
+      "GraphQL",
+      "Node.js",
+      "Next.js",
+      "Gatsby.js",
+      "Agile methodologies",
+    ],
+  },
+  {
+    year: "2023",
+    content:
+      "Started to self learn JavaScript, HTML and CSS through documentation and freeCodeCamp",
+    tags: ["React", "Javascript", "HTML5", "CSS"],
+  },
+  {
+    year: "2024",
+    content:
+      "Started a bootcamp at MateAcademy as part of the first cohort of Brazilian full-stack students.",
+    tags: [
+      "React",
+      "Typescript",
+      "Node.js",
+      "Express.js",
+      "Prisma",
+      "Git/Github",
+      "Redux",
+      "PostgreSQL",
+      "Scrum",
+      "Click-up",
+    ],
+  },
+];
+
 const AboutMe: React.FC<AboutMeProps> = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const motivationRef = useRef<HTMLParagraphElement>(null);
+  const lastCardRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (sliderRef.current && containerRef.current) {
-      const slider = sliderRef.current;
-      const container = containerRef.current;
+    const slider = sliderRef.current;
+    const container = containerRef.current;
 
-      const sliderWidth = slider.scrollWidth;
-      const containerWidth = container.clientWidth;
-
-      gsap.set(slider, { x: 520 });
+    if (slider && container) {
+      gsap.set(slider, { x: 0 });
 
       Draggable.create(slider, {
         type: "x",
         bounds: {
-          minX: sliderWidth - containerWidth - 450,
-          maxX: -(sliderWidth - containerWidth) + 450,
+          minX: 0,
+          maxX: 1400,
         },
         inertia: true,
         edgeResistance: 1,
-        snap: {
-          x: (endValue: number) => Math.round(endValue / 300) * 300,
+        liveSnap: {
+          x: (endValue: number) => Math.round(endValue / 270) * 270,
+        },
+        onDragEnd() {
+          console.log(this.x);
         },
       });
     }
@@ -41,91 +89,79 @@ const AboutMe: React.FC<AboutMeProps> = () => {
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".slider-container",
-        start: "center center",
-        end: "bottom center",
+        trigger: motivationRef.current,
+        start: "top bottom",
+        end: "center center",
         toggleActions: "restart pause resume reset",
+        onEnter: () => {
+          tl.to(motivationRef.current, {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            ease: "power2.out",
+          });
+        },
       },
     });
-  
+
     tl.to(motivationRef.current, {
-      duration: 3,
+      duration: 30,
       text: {
-        value: "I am excited about the opportunity to join Buzzvel because I believe it is the perfect environment for individuals who are passionate about growth and continuous learning. The dedication and enthusiasm for coding that I see in the Buzzvel team truly inspire me. As a Portuguese speaker, I also appreciate that Buzzvel is based in Lisbon, which would facilitate clear and effective communication. I am eager to contribute to a team that values innovation and collaboration while enhancing my skills and advancing my career.",
-        speed: 2,
+        value:
+          "I am excited about the opportunity to join Buzzvel because I believe it is the perfect environment for individuals who are passionate about growth and continuous learning. The dedication and enthusiasm for coding that I see in the Buzzvel team truly inspire me. As a Portuguese speaker, I also appreciate that Buzzvel is based in Lisbon, which would facilitate clear and effective communication. I am eager to contribute to a team that values innovation and collaboration while enhancing my skills and advancing my career.",
+        speed: 1,
         type: "diff",
       },
       ease: "none",
       repeat: 0,
     });
-  });
-  
+  }, []);
 
   return (
     <div className={styles.aboutMe} id="about-me">
-      <h2 className={styles["aboutMe__title"]}>My experience</h2>
-      <div className={styles["slider-container"]} ref={containerRef}>
-        <div className={styles.slider} ref={sliderRef}>
-          <div className={styles.card}>
-            <h2 className={styles["card__year"]}>2020</h2>
-            <p className={styles["card__content"]}>Graduated in Bioanalysis</p>
-          </div>
-          <div className={styles.card}>
-            <h2 className={styles["card__year"]}>2021</h2>
-            <p className={styles["card__content"]}>
-              Started to learn Java and Spring Boot by online courses.
-            </p>
-          </div>
-          <div className={styles.card}>
-            <h2 className={styles["card__year"]}>2022</h2>
-            <p className={styles["card__content"]}>
-              Participated in a VTEX program named Hiring Coders, plus{" "}
-              <a
-                href="https://www.dio.me/en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles["card__link"]}
-              >
-                DIO{" "}
-              </a>
-              Bootcamps
-            </p>
-          </div>
-          <div className={styles.card}>
-            <h2 className={styles["card__year"]}>2023</h2>
-            <p className={styles["card__content"]}>
-              Started to self learn JavaScript, HTML and CSS through
-              documentation and{" "}
-              <a
-                href="https://www.freecodecamp.org/Matheus_Stefan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles["card__link"]}
-              >
-                freeCodeCamp.
-              </a>
-            </p>
-          </div>
-          <div className={styles.card}>
-            <h2 className={styles["card__year"]}>2024</h2>
-            <p className={styles["card__content"]}>
-              Started a fullstack bootcamp on{" "}
-              <a
-                href="https://shorturl.at/Mwhat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles["card__link"]}
-              >
-                MateAcademy
-              </a>
-              , been part of the first brazilian fullstack students.
-            </p>
+      <h2 className={styles["aboutMe__title"]}>
+        My <br />
+        Experience
+      </h2>
+      <div className={styles["aboutMe__container"]}>
+        <div className={styles["slider__container"]} ref={containerRef}>
+          <div className={styles.slider} ref={sliderRef}>
+            <div className={styles.motivation} ref={lastCardRef}>
+              <h3 className={styles["motivation__title"]}>Why Buzzvel?</h3>
+              <p
+                className={styles["motivation__content"]}
+                ref={motivationRef}
+              ></p>
+            </div>
+            {cards
+              .slice()
+              .reverse()
+              .map((card, index) => (
+                <div className={styles.card} key={index}>
+                  <h2 className={styles["card__year"]}>{card.year}</h2>
+                  <p className={styles["card__content"]}>{card.content}</p>
+                  <br />
+                  {card.tags && (
+                    <div className={styles["card__tagsContainer"]}>
+                      {card.tags.map((tag, i) => (
+                        <span key={i} className={styles["card__tag"]}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
           </div>
         </div>
-      </div>
-      <div className={styles.motivation}>
-        <h2 className={styles["motivation__title"]}>Why Buzzvel?</h2>
-        <p className={styles["motivation__content"]} ref={motivationRef}></p>
+        <div className={styles["spotify-label"]}>
+          <iframe
+            className={styles["spotify-label__link"]}
+            src="https://open.spotify.com/embed/artist/01nhiJDD1jA4Bu3VDTlPVN?utm_source=generator"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
     </div>
   );
