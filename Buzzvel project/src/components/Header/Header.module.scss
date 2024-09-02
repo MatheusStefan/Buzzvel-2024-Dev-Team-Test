@@ -14,14 +14,15 @@
 .navigation {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
   
   .navigation__list {
+    width: 50%;
     position: fixed;
     display: flex;
     top: 15px;
     right: 10px;
-    gap: 3em;
+    align-items: center;
+    justify-content: space-between;
     z-index: 1;
     background-color: transparent;
   }
