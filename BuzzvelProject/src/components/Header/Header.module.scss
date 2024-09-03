@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  &__logo {
+    &-content {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  
+  .navigation__list {
+    width: 50%;
+    position: fixed;
+    display: flex;
+    top: 15px;
+    right: 10px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    background-color: transparent;
+  }
+
+  &__item {
+    list-style: none;
+    transition: transform 200ms ease-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
