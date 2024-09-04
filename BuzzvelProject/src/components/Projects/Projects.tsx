@@ -16,7 +16,7 @@ const cardData = [
     alt: "Viplant Image",
     name: "Viplant",
     description:
-      "We created a new website for VIPLANT with the main aim of enhancing the user experience, extending the quality of the physical purchase to the digital environment.",
+      "A website for VIPLANT with the main aim of enhancing the user experience, extending the quality of the physical purchase to the digital environment.",
   },
   {
     href: "https://buzzvel.com/portfolio/traquinices",
@@ -34,7 +34,7 @@ const cardData = [
     alt: "DBS Image",
     name: "DBS",
     description:
-      "We built this platform and APP that allowed primary users to track medical tests.",
+      "A platform and APP that allowed primary users to track medical tests.",
   },
   {
     href: "https://buzzvel.com/portfolio/miss-can",
