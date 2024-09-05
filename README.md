@@ -1,7 +1,7 @@
 # Buzzvel Developer Project
 
 This project was created as part of the application process for a developer position at **Buzzvel**. It demonstrates my skills in React, TypeScript, and GSAP (GreenSock Animation Platform), combining modern web development techniques with smooth animations and responsive design.
-
+### you can access it [here](https://matheusstefan.github.io/Buzzvel-2024-Dev-Team-Test/)
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
