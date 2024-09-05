@@ -66,21 +66,18 @@ const AboutMe: React.FC<AboutMeProps> = () => {
     const container = containerRef.current;
 
     if (slider && container) {
-      gsap.set(slider, { x: 0 });
+      gsap.set(slider, { x: -800 });
 
       Draggable.create(slider, {
         type: "x",
         bounds: {
-          minX: 0,
-          maxX: 1400,
+          minX: -800,
+          maxX: 670,
         },
         inertia: true,
-        edgeResistance: 1,
+        edgeResistance: 0,
         liveSnap: {
-          x: (endValue: number) => Math.round(endValue / 270) * 270,
-        },
-        onDragEnd() {
-          console.log(this.x);
+          x: (endValue: number) => Math.round(endValue / 300) * 300,
         },
       });
     }
@@ -91,7 +88,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
       scrollTrigger: {
         trigger: motivationRef.current,
         start: "top bottom",
-        end: "center center",
+        end: "center center-=200",
         toggleActions: "restart pause resume reset",
         onEnter: () => {
           tl.to(motivationRef.current, {
@@ -153,14 +150,11 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                 </div>
               ))}
           </div>
+        <div className={styles.arrow}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div className={styles["spotify-label"]}>
-          <iframe
-            className={styles["spotify-label__link"]}
-            src="https://open.spotify.com/embed/artist/01nhiJDD1jA4Bu3VDTlPVN?utm_source=generator"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
         </div>
       </div>
     </div>

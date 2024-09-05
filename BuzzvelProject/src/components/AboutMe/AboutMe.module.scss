@@ -2,10 +2,6 @@
 
 .aboutMe {
   margin: 120px 10px 20px 0;
-  
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0;
 
   @media (min-width: 768px) {
     margin: 150px 50px 150px;
@@ -27,7 +23,7 @@
     margin-bottom: 80px;
     margin-left: 10px;
     text-align: center;
-    line-height: 35px;
+    line-height: 60px;
 
     @media (min-width: 1024px) {
       font-size: 80px;
@@ -46,6 +42,7 @@
     @media (min-width:768px) {
       flex-direction: row;
     }
+
   }
 
   .slider__container {
@@ -54,8 +51,36 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     overflow: hidden;
+
+    .arrow {
+      position: absolute;
+      right: 20%;
+      transform: translate(-50%, -50%);
+      transform: rotate(270deg);
+    }
+    
+    .arrow span {
+      display: block;
+      width: 5vw;
+      height: 5vw;
+      border-bottom: 5px solid white;
+      border-right: 5px solid white;
+      transform: rotate(45deg);
+      margin: -10px;
+      animation: animate 2s infinite;
+    }
+
+    .arrow span:nth-child(2) {
+      animation-delay: -0.2s;
+    }
+
+    .arrow span:nth-child(3) {
+      animation-delay: -0.4s;
+    }
+
+
   }
 
   .slider {
@@ -69,7 +94,7 @@
     padding-inline: 20px;
     border-radius: 10px;
 
-    height: 400px;
+    height: 410px;
 
     @media (min-width: 1024px) {
       height: 450px;
@@ -81,7 +106,7 @@
     height: 350px;
     background-color: #f5f5f5;
     border-radius: 10px;
-    padding: 20px;
+    padding: 5px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #000;
 
@@ -133,32 +158,6 @@
       font-size: 14px;
     }
   }
-
-  .spotify-label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    @media (min-width: 768px) {
-      justify-content: flex-start;
-    }
-
-    @media (min-width: 1024px) {
-      justify-content: flex-start;
-    }
-
-    &__link {
-      height: 400px;
-      border: none;
-
-      @media (min-width: 1024px) {
-        height: 450px;
-      }
-    }
-  }
-
 }
 
 @keyframes fadeIn {
@@ -171,14 +170,18 @@
   }
 }
 
-
-@keyframes appear {
-  from {
+@keyframes animate {
+  0% {
     opacity: 0;
-    scale: 0.5;
+    transform: rotate(45deg) translate(-20px, -20px);
   }
-  to {
+
+  50% {
     opacity: 1;
-    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
   }
 }

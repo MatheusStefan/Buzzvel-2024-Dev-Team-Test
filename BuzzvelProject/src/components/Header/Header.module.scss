@@ -9,37 +9,23 @@
     padding: 20px;
     gap: 100px;
   }
-
-  &__logo {
-    width: 24px;
-    height: 24px;
-
-    &-content {
-      width: 24px;
-      height: 24px;
-    }
-  }
 }
 
 .navigation {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 
   .navigation__list {
-    width: 50%;
     position: fixed;
-    top: 20px;
-    right: 2px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     z-index: 1;
     background-color: transparent;
-    height: 24px;
-
-    @media (min-width: 768px) {
-      right: 20px;
-    }
+    border-radius: 10px;
+    height: 26px;
   }
 
   &__item {

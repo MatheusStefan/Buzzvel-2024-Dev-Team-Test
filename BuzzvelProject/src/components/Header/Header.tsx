@@ -12,65 +12,51 @@ const Header: React.FC<HeaderProps> = () => {
   const navRef = useRef<HTMLUListElement | null>(null);
 
   useGSAP(() => {
-    gsap.to(navRef.current, {
-      scrollTrigger: {
-        trigger: ".hero-section__contact",
-        start: "top center",
-        end: "center center",
-        scrub: true,
+    gsap.fromTo(
+      navRef.current,
+      {
+        scrollTrigger: {
+          trigger: ".aboutMe",
+          start: "top center",
+          end: "center top",
+          scrub: true,
+        },
+        width: "100vw",
       },
-      width: "40%",
-      backgroundColor: "rgb(0, 0, 0, 0.1)",
-      padding: "5px",
-      borderRadius: "1em",
-    });
+      {
+        scrollTrigger: {
+          trigger: ".aboutMe",
+          start: "top center",
+          end: "center top",
+          scrub: true,
+        },
+        width: "50vw",
+      }
+    );
   });
 
   return (
     <header className={styles.header}>
-      <div className={styles["header__logo"]}>
-        <img
-          src="icons/favicon.ico"
-          alt="buzzvel-logo"
-          className={styles["header__logo-content"]}
-        />
-      </div>
       <nav className={styles.navigation}>
         <ul className={styles["navigation__list"]} ref={navRef}>
           <li className={styles["navigation__item"]}>
             <a href="#" className={styles["navigation__link"]}>
-              <img
-                src="icons/home.svg"
-                alt="home-icon"
-                className={styles["navigation__icon"]}
-              />
+             <img src="icons/home.svg" alt="" />
             </a>
           </li>
           <li className={styles["navigation__item"]}>
             <a href="#about-me" className={styles["navigation__link"]}>
-              <img
-                src="icons/user-icon.svg"
-                alt="about_me-icon"
-                className={styles["navigation__icon"]}
-              />
+              <img src="icons/user-icon.svg" alt="" />
             </a>
           </li>
           <li className={styles["navigation__item"]}>
             <a href="#projects" className={styles["navigation__link"]}>
-              <img
-                src="icons/projects-section.svg"
-                alt="projects-icon"
-                className={styles["navigation__icon"]}
-              />
+              <img src="icons/projects-section.svg" alt="projects-section" />
             </a>
           </li>
           <li className={styles["navigation__item"]}>
             <a href="#timeline" className={styles["navigation__link"]}>
-              <img
-                src="icons/timeline-section.svg"
-                alt="timeline-icon"
-                className={styles["navigation__icon"]}
-              />
+              <img src="icons/timeline-section.svg" alt="timeline-section" />
             </a>
           </li>
         </ul>

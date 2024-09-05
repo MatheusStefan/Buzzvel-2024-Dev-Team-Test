@@ -21,13 +21,13 @@ const Timeline: React.FC<TimelineProps> = () => {
         {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 3,
           stagger: 1,
           scrollTrigger: {
             trigger: timelineRef.current,
             start: "top center+=100",
             end: "bottom bottom",
-            scrub: true,
+            scrub: 0.5,
           },
         }
       );
@@ -36,9 +36,9 @@ const Timeline: React.FC<TimelineProps> = () => {
         display: "flex",
         scrollTrigger: {
           trigger: timelineRef.current,
-          start: "top center-=200",
+          start: "top center-=100",
           end: "bottom bottom",
-          scrub: 20,
+          scrub: 80,
           onUpdate: (self) => {
             const progress = self.progress;
             const index = Math.round(progress * (itemsRef.current.length - 1));
@@ -49,8 +49,8 @@ const Timeline: React.FC<TimelineProps> = () => {
                 timelineRef.current!.getBoundingClientRect().top;
               gsap.to(circleRef.current, {
                 y: targetPosition,
-                duration: 1,
-                ease: "power2.out",
+                duration: 2,
+                ease: "slow",
               });
             }
           },
