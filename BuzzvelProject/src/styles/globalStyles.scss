@@ -21,18 +21,6 @@ body {
   animation: fadeIn 3s ease;
 }
 
-.light-theme {
-  background-color: map-get($light-theme-colors, background);
-  color: map-get($light-theme-colors, text);
-  fill: map-get($light-theme-colors, fill )
-}
-
-.dark-theme {
-  background-color: map-get($dark-theme-colors, background);
-  color: map-get($dark-theme-colors, text);
-  fill: map-get($dark-theme-colors, fill )
-}
-
 h1 {
   font-size: 72px;
 }
