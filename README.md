@@ -1,7 +1,6 @@
 # Buzzvel Developer Project
 
 This project was created as part of the application process for a developer position at **Buzzvel**. It demonstrates my skills in React, TypeScript, and GSAP (GreenSock Animation Platform), combining modern web development techniques with smooth animations and responsive design.
-### you can access it [here](https://matheusstefan.github.io/Buzzvel-2024-Dev-Team-Test/)
 ## Table of Contents
 - [Overview](#overview)
 - [Lighthouse](#lighthouse)
@@ -12,7 +11,7 @@ This project was created as part of the application process for a developer posi
 
 ## Overview
 
-This project showcases my experience and why I want to work at **Buzzvel** through a *slider*, the best **Buzzvel** projects, a SEO optimized lading page fully responsive and a visual timeline outlining my envisioned career progression at **Buzzvel**. The goal is to highlight proficiency in React, TypeScript, and GSAP, while delivering a seamless and engaging user experience.
+This project showcases my experience and why I want to work at **Buzzvel** through a *slider*, the best **Buzzvel** projects, a SEO optimized lading page fully responsive and a visual timeline outlining my envisioned career progression at **Buzzvel**. The goal is to highlight proficiency in React, TypeScript, and GSAP, while delivering a seamless and engaging user experience. You can access the site [here](https://matheusstefan.github.io/Buzzvel-2024-Dev-Team-Test/)
 
 ## Lighthouse Results
 ### Desktop
