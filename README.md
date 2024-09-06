@@ -4,6 +4,7 @@ This project was created as part of the application process for a developer posi
 ## Table of Contents
 - [Overview](#overview)
 - [Lighthouse](#lighthouse)
+- [Snapshots](#snapshots)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
@@ -19,6 +20,16 @@ This project showcases my experience and why I want to work at **Buzzvel** throu
 
 ### Mobile
   ![Lighthouse Mobile](https://github.com/user-attachments/assets/aaa45dd1-97e3-4bcd-9cc5-0d52f9d1485d)
+
+## Snapshots
+### Homepage
+  ![Homepage](https://github.com/user-attachments/assets/e23ccc42-dbe7-4da4-9898-9cc0968b7b44)
+### Experience
+  ![Myexperience](https://github.com/user-attachments/assets/3ad99892-314b-4163-80db-18a8201562bd)
+### Buzzvel top projects
+  ![BuzzvelProjects](https://github.com/user-attachments/assets/f0240ce8-9d5c-4c49-8f3a-bbbd9ef61ec0)
+### Visual timeline
+  ![timeline](https://github.com/user-attachments/assets/a62be78f-a8d5-436a-b33b-c305296d4b0d)
 
 ## Features
 - **Interactive animations** powered by GSAP for smooth transitions and scroll-based effects.
