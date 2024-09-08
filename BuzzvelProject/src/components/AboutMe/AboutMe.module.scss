@@ -171,9 +171,11 @@
     padding: 10px;
     border-radius: 10px;
     background-color: $accent;
+    color: $primary-color;
 
     &__content {
       font-size: 14px;
+      color: $primary-color;
     }
   }
 }

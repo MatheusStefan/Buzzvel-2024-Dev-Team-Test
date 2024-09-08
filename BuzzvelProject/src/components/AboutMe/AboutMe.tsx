@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "./AboutMe.module.scss";
 import gsap from "gsap";
 import { Draggable, ScrollTrigger, TextPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 gsap.registerPlugin(Draggable, TextPlugin, ScrollTrigger);
 
@@ -60,6 +61,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const motivationRef = useRef<HTMLParagraphElement>(null);
   const lastCardRef = useRef<HTMLDivElement>(null);
+  const { theme } = useContext(ThemeContext);
 
   useGSAP(() => {
     const slider = sliderRef.current;
@@ -84,8 +86,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
             const closestCardIndex = Math.round(-endValue / cardWidth);
             // Calculate the new x position to center that card
             const centeredPosition =
-              -closestCardIndex * cardWidth +
-              (containerWidth / cardWidth);
+              -closestCardIndex * cardWidth + containerWidth / cardWidth;
             return centeredPosition;
           },
         },
@@ -161,9 +162,30 @@ const AboutMe: React.FC<AboutMeProps> = () => {
               ))}
           </div>
           <div className={styles.arrow}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span
+              style={{
+                borderBottom:
+                  theme === "dark" ? "5px solid #fffff0" : "5px solid #000",
+                borderRight:
+                  theme === "dark" ? "5px solid #fffff0" : "5px solid #000",
+              }}
+            ></span>
+            <span
+              style={{
+                borderBottom:
+                  theme === "dark" ? "5px solid #fffff0" : "5px solid #000",
+                borderRight:
+                  theme === "dark" ? "5px solid #fffff0" : "5px solid #000",
+              }}
+            ></span>
+            <span
+              style={{
+                borderBottom:
+                  theme === "dark" ? "5px solid #fffff0" : "5px solid #000",
+                borderRight:
+                  theme === "dark" ? "5px solid #fffff0" : "5px solid #000",
+              }}
+            ></span>
           </div>
         </div>
       </div>

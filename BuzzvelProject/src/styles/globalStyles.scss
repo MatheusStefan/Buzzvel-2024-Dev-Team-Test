@@ -15,10 +15,16 @@
 }
 
 body {
-  background-color: $secondary-color;
-  color: $primary-color;
-  
   animation: fadeIn 3s ease;
+  .dark {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+  
+  .light {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
 }
 
 h1 {

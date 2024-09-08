@@ -9,7 +9,6 @@
     top: 0;
     left: 0;
 
-    background-color: $primary-color;
     height: 100vh;
     width: 100vw;
     padding: 30px;
@@ -70,7 +69,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: $secondary-color;
   gap: 50px;
 
   .about-me {
@@ -94,7 +92,6 @@
 
   .welcome {
     font-weight: bold;
-    color: $primary-color;
     z-index: 9;
 
     font-size: 3rem;
@@ -150,15 +147,14 @@
       margin-bottom: 18px;
       padding: 10px;
       border-radius: 20px;
-      color: $secondary-color;
       background-color: $secondary-color;
       text-align: center;
 
       &-info {
         text-decoration: none;
-        color: #fff;
         transition: color 200ms ease;
         font-size: 20px;
+        color: $primary-color;
 
         &:hover {
           color: $accent;
@@ -189,8 +185,6 @@
     }
 
     &__link {
-      color: $primary-color;
-
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -201,8 +195,10 @@
       font-size: 14px;
       transition: color 300ms ease;
 
-      &:hover {
-        color: $accent;
+      &-text {
+        &:hover {
+          color: $accent;
+        }
       }
     }
 
@@ -213,6 +209,11 @@
       justify-content: center;
 
       list-style: none;
+    }
+
+    &__icon {
+      width: 26px;
+      height: 26px;
     }
   }
 

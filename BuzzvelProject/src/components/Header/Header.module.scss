@@ -29,10 +29,9 @@
   }
 
   &__link {
-    background-color: #000000e6;
-    width: 26px;
-    height: 26px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     padding: 2px;
   }
@@ -40,9 +39,42 @@
   &__item {
     list-style: none;
     transition: transform 200ms ease-out;
-
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 10px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     &:hover {
       transform: scale(1.1);
     }
+  }
+  
+  &__icon {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+  
+    cursor: pointer;
+
+    @media (min-width: 1024px) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+  
+  &__theme-color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 2px;
+    height: fit-content;
+    border: none;
+    background-color: transparent;
+  
+    cursor: pointer;
   }
 }

@@ -104,22 +104,18 @@ const Projects: React.FC<ProjectsProps> = () => {
   useGSAP(() => {
     const proxy = { skew: 0 };
 
-    // Create a quick setter for skewY with degrees
     const skewSetter = gsap.quickSetter(
       skewElementsRef.current,
       "skewY",
       "deg"
     );
 
-    // Clamp function to limit skew values between -20 and 20 degrees
     const clamp = gsap.utils.clamp(-20, 20);
 
     ScrollTrigger.create({
       onUpdate: (self) => {
-        // Calculate skew based on scroll velocity
         const skew = clamp(self.getVelocity() / -300);
 
-        // Update skew only if the new value is more extreme
         if (Math.abs(skew) > Math.abs(proxy.skew)) {
           proxy.skew = skew;
           gsap.to(proxy, {
@@ -133,7 +129,6 @@ const Projects: React.FC<ProjectsProps> = () => {
       },
     });
 
-    // Set initial properties for the skew element
     if (skewElementsRef.current) {
       gsap.set(skewElementsRef.current, {
         transformOrigin: "right center",
@@ -166,8 +161,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                 alt={card.alt}
                 className={styles["project__card-image"]}
               />
-              <span className={styles["project__card-name"]}>{card.name}</span>
             </a>
+            <span className={styles["project__card-name"]}>{card.name}</span>
             <p className={styles["project__card-description"]}>
               {card.description}
             </p>

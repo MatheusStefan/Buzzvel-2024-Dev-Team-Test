@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "./Timeline.module.scss";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { ThemeContext } from "../../context/ThemeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,12 +13,13 @@ const Timeline: React.FC<TimelineProps> = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const circleRef = useRef<HTMLDivElement>(null);
+  const { theme } = useContext(ThemeContext);
 
   useGSAP(() => {
     if (timelineRef.current && itemsRef.current.length && circleRef.current) {
       gsap.fromTo(
         itemsRef.current,
-        { opacity: 0, x: -100 },
+        { opacity: 0, x: -50 },
         {
           opacity: 1,
           x: 0,
@@ -25,7 +27,7 @@ const Timeline: React.FC<TimelineProps> = () => {
           stagger: 1,
           scrollTrigger: {
             trigger: timelineRef.current,
-            start: "top center+=100",
+            start: "top center+=200",
             end: "bottom bottom-=100",
             scrub: 0.5,
           },
@@ -50,7 +52,7 @@ const Timeline: React.FC<TimelineProps> = () => {
               gsap.to(circleRef.current, {
                 y: targetPosition,
                 duration: 2,
-                ease: "slow",
+                ease: "power2.out",
               });
             }
           },
@@ -68,7 +70,11 @@ const Timeline: React.FC<TimelineProps> = () => {
   return (
     <>
       <div className={styles.timeline} ref={timelineRef} id="timeline">
-        <h2 className={styles["timeline__title"]} ref={addToRefs}>
+        <h2
+          className={styles["timeline__title"]}
+          ref={addToRefs}
+          style={{ color: theme === "dark" ? "#fffff0" : "#000" }}
+        >
           My 3-5 Year Career Progression at Buzzvel: A Visual Timeline
         </h2>
         <div className={styles["timeline__circle"]} ref={circleRef}></div>
