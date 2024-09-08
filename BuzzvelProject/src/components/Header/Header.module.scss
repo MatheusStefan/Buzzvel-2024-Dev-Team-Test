@@ -28,6 +28,15 @@
     height: 26px;
   }
 
+  &__link {
+    background-color: #000000e6;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    border-radius: 10px;
+    padding: 2px;
+  }
+
   &__item {
     list-style: none;
     transition: transform 200ms ease-out;

@@ -26,7 +26,7 @@ const Timeline: React.FC<TimelineProps> = () => {
           scrollTrigger: {
             trigger: timelineRef.current,
             start: "top center+=100",
-            end: "bottom bottom",
+            end: "bottom bottom-=100",
             scrub: 0.5,
           },
         }

@@ -28,6 +28,10 @@
       font-size: 56px;
       width: 70vw;
     }
+
+    @media (min-width: 1400px) {
+      margin: 40px 0;
+    }
   }
 
   &__circle {

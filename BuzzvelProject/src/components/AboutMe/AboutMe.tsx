@@ -66,18 +66,28 @@ const AboutMe: React.FC<AboutMeProps> = () => {
     const container = containerRef.current;
 
     if (slider && container) {
-      gsap.set(slider, { x: -800 });
+      const cardWidth = 250;
+      const containerWidth = container.offsetWidth;
+      gsap.set(slider, { x: -100 });
 
       Draggable.create(slider, {
         type: "x",
         bounds: {
-          minX: -800,
-          maxX: 670,
+          minX: 1400,
+          maxX: -200,
         },
         inertia: true,
-        edgeResistance: 0,
+        edgeResistance: 1,
         liveSnap: {
-          x: (endValue: number) => Math.round(endValue / 300) * 300,
+          x: (endValue: number) => {
+            // Calculate the card that is closest to the center of the container
+            const closestCardIndex = Math.round(-endValue / cardWidth);
+            // Calculate the new x position to center that card
+            const centeredPosition =
+              -closestCardIndex * cardWidth +
+              (containerWidth / cardWidth);
+            return centeredPosition;
+          },
         },
       });
     }
@@ -150,11 +160,11 @@ const AboutMe: React.FC<AboutMeProps> = () => {
                 </div>
               ))}
           </div>
-        <div className={styles.arrow}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <div className={styles.arrow}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
