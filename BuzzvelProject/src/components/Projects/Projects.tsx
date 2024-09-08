@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "./Projects.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,6 +95,7 @@ const cardData = [
 
 const Projects: React.FC<ProjectsProps> = () => {
   const skewElementsRef = useRef<HTMLImageElement[]>([]);
+  const { theme } = useContext(ThemeContext);
 
   const addToRefs = (el: HTMLImageElement) => {
     if (el && !skewElementsRef.current.includes(el)) {
@@ -155,14 +157,15 @@ const Projects: React.FC<ProjectsProps> = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles["project__card-link"]}
+              style={{ color: theme === "dark" ? "#fffff0" : "#000" }}
             >
               <img
                 src={card.imageSrc}
                 alt={card.alt}
                 className={styles["project__card-image"]}
               />
+              <span className={styles["project__card-name"]}>{card.name}</span>
             </a>
-            <span className={styles["project__card-name"]}>{card.name}</span>
             <p className={styles["project__card-description"]}>
               {card.description}
             </p>
