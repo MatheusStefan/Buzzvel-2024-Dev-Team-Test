@@ -12,7 +12,7 @@ This project was created as part of the application process for a developer posi
 
 ## Overview
 
-This project showcases my experience and why I want to work at **Buzzvel** through a *slider*, the best **Buzzvel** projects, a SEO optimized lading page fully responsive and a visual timeline outlining my envisioned career progression at **Buzzvel**. The goal is to highlight proficiency in React, TypeScript, and GSAP, while delivering a seamless and engaging user experience. You can access the site [here](https://matheusstefan.github.io/Buzzvel-2024-Dev-Team-Test/)
+This project showcases my experience and why I want to work at **Buzzvel** through a *slider*, the best **Buzzvel** projects, a SEO optimized lading page fully responsive and a visual timeline outlining my envisioned career progression at **Buzzvel**. The goal is to highlight proficiency in React, TypeScript, and GSAP, while delivering a seamless and engaging user experience. You can access the site <a target="_blank" href="https://matheusstefan.github.io/Buzzvel-2024-Dev-Team-Test/" rel="noopener noreferrer">here</a>
 
 ## Lighthouse Results
 ### Desktop
