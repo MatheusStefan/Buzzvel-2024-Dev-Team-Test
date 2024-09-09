@@ -35,6 +35,7 @@ This project showcases my experience and why I want to work at **Buzzvel** throu
 - **Interactive animations** powered by GSAP for smooth transitions and scroll-based effects.
 - **TypeScript integration** for type-safe development.
 - **Responsive design** ensuring an optimal experience on both mobile and desktop devices.
+- **localStorage** to store theme colors
 
 ## Technologies Used
 
