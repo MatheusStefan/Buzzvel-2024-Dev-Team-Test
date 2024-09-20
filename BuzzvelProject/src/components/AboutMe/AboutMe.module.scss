@@ -64,11 +64,12 @@
       @media (min-width: 768px) {
         right: 10%;
       }
+
       @media (min-width: 1024px) {
         right: 8%;
       }
     }
-    
+
     .arrow span {
       display: block;
       width: 10vw;
@@ -173,8 +174,13 @@
     background-color: $accent;
     color: $primary-color;
 
+    &__title {
+      line-height: 40px;
+    }
+
     &__content {
       font-size: 14px;
+      padding-top: 8px;
       color: $primary-color;
     }
   }

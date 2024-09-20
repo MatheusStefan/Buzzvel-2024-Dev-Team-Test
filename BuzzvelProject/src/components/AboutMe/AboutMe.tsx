@@ -4,57 +4,11 @@ import gsap from "gsap";
 import { Draggable, ScrollTrigger, TextPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { ThemeContext } from "../../context/ThemeContext";
+import { cards } from "../../data/cards";
 
 gsap.registerPlugin(Draggable, TextPlugin, ScrollTrigger);
 
 type AboutMeProps = unknown;
-
-const cards = [
-  { year: "2020", content: "Graduation in Bioanalysis" },
-  {
-    year: "2021",
-    content: "Started to learn Java and Spring Boot by online courses.",
-    tags: ["Java", "Spring Boot", "Ionic", "Microservices", "Hibernate"],
-  },
-  {
-    year: "2022",
-    content:
-      "Participated in a VTEX program named Hiring Coders, plus DIO Bootcamps",
-    tags: [
-      "Javascript",
-      "Typescript",
-      "React",
-      "GraphQL",
-      "Node.js",
-      "Next.js",
-      "Gatsby.js",
-      "Agile methodologies",
-    ],
-  },
-  {
-    year: "2023",
-    content:
-      "Started to self learn JavaScript, HTML and CSS through documentation and freeCodeCamp",
-    tags: ["React", "Javascript", "HTML5", "CSS"],
-  },
-  {
-    year: "2024",
-    content:
-      "Started a bootcamp at MateAcademy as part of the first cohort of Brazilian full-stack students.",
-    tags: [
-      "React",
-      "Typescript",
-      "Node.js",
-      "Express.js",
-      "Prisma",
-      "Git/Github",
-      "Redux",
-      "PostgreSQL",
-      "Scrum",
-      "Click-up",
-    ],
-  },
-];
 
 const AboutMe: React.FC<AboutMeProps> = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -116,7 +70,7 @@ const AboutMe: React.FC<AboutMeProps> = () => {
       duration: 30,
       text: {
         value:
-          "I am excited about the opportunity to join Buzzvel because I believe it is the perfect environment for individuals who are passionate about growth and continuous learning. The dedication and enthusiasm for coding that I see in the Buzzvel team truly inspire me. As a Portuguese speaker, I also appreciate that Buzzvel is based in Lisbon, which would facilitate clear and effective communication. I am eager to contribute to a team that values innovation and collaboration while enhancing my skills and advancing my career.",
+          "I'm excited about the opportunity to join Buzzvel because I believe it's the perfect environment for individuals who are passionate about growth and continuous learning. The dedication and enthusiasm for coding that I see in the Buzzvel team truly inspire me. As a Portuguese speaker, I also appreciate that Buzzvel is based in Lisbon, which would facilitate clear and effective communication. I'm eager to contribute to a team that values innovation and collaboration while enhancing my skills and advancing my career.",
         speed: 1,
         type: "diff",
       },
